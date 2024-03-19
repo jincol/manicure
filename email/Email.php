@@ -28,7 +28,7 @@ class Email
         $mail->SMTPAuth = true;
         $mail->Port =$_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Password = $_ENV['EMAIL_PASSWORD '];
 
 
         $mail->setFrom('cuentas@manicure.com');
@@ -63,7 +63,7 @@ class Email
         $mail->SMTPAuth = true;
         $mail->Port =$_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Password = $_ENV['EMAIL_PASSWORD '];
 
         $mail->setFrom('cuentas@manicure.com');
         $mail->addAddress('cuentas@manicure.com', 'manicure.com');

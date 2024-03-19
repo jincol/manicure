@@ -2,10 +2,10 @@
 
 $server = $_ENV['DB_HOST'];
 $nombre = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASSWORD'];
+$password = $_ENV['DB_PASS'];
 $dbname = $_ENV['DB_NAME'];
 
-$db = mysqli_connect($server, $nombre, $password, $dbname);
+$db = mysqli_connect($_ENV['DB_HOST'],$_ENV['DB_USER'], $_ENV['DB_PASS'],$_ENV['DB_NAME']);
 
 $db->set_charset('utf8');
 
