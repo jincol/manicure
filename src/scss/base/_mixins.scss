@@ -1,0 +1,41 @@
+@mixin telefono {
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width:1200px) {
+        @content;
+    }
+}
+
+@mixin grid ($columna,$gap){
+    display: grid;
+    grid-template-columns: repeat($columna,1fr);
+    gap: $gap;
+}
+
+@mixin boton ($fondo,$color){
+    background-color: $fondo;
+    color: $color;
+    padding: .7rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    display: inline-block;
+    font-weight: 700;
+    border: none;
+    transition: background-color .3s ease;
+
+    &:hover{
+        background-color: darken( $bgColor, 10% );
+        cursor: pointer;
+    }
+}

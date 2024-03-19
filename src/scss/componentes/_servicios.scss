@@ -1,0 +1,80 @@
+@use 'base/variable' as v;
+@use 'base/mixins' as m;
+
+.contenedor-servicios {
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+
+
+    @include m.tablet {
+        background-image: url("/../img/imgs.jpg");
+        display: flex;
+        height: 100vh;
+        margin-bottom: 1.5rem;
+    }
+
+    .img {
+        flex: 1;
+        height: 20rem;
+        background-image: url("/../img/uña7.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: repeat;
+
+        @include m.tablet {
+            height: auto;
+            background-image:none;
+
+        }
+    }
+
+    .servicios {
+        background-color: v.$text-logo ;
+        flex: 1;
+        overflow-y: scroll;
+
+        h2 {
+            color: v.$white;
+            font-size: 3rem;
+            padding: 1rem 0;
+        }
+    }
+
+    .servicios::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+
+    .servicio {
+        flex: 1;
+        padding: 1rem;
+        margin: .5rem 0;
+        border-bottom: thin ridge black;
+
+        @include m.telefono {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nombre {
+            font-size: 1.5rem;
+            font-weight: bold;
+
+        }
+
+        .opciones {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: .5rem 0;
+
+            @include m.tablet {
+                flex-direction: column;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,37 @@
+@use 'base/variable' as v;
+
+.boton{
+    background-color: v.$text-logo;
+    padding: 1rem 2rem;
+    display: block;
+     font-weight: bold;
+    color: v.$black;
+    font-size: 2rem;
+    border-radius: 2rem;
+    transition: background-color .2s ease;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    margin: 2rem auto;
+    &:hover{
+        background-color: darken(v.$text-logo, 10%);
+    }
+}
+
+.btn_a{
+    background-color: rgb(159, 237, 240);
+    padding: .5rem .7rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.btn_e{
+    background-color: rgb(247, 144, 76);
+    padding: .6rem 1.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}

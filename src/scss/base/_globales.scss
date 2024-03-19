@@ -1,0 +1,62 @@
+@use 'variable' as v;
+@use 'base/mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgb(252, 252, 252);
+    // color: white;
+    font-family: v.$fuente_secundaria;
+    font-size: 1.6rem;
+    
+    
+
+    &.ow {
+        overflow: hidden;
+    }
+
+    @include m.telefono{
+        &.ow {
+            overflow: auto;
+        }
+    }
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    color: v.$text-logo;
+    font-weight: 600;
+}
+

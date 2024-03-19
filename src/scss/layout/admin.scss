@@ -1,0 +1,58 @@
+.header{
+    
+    h2{
+        margin: 0
+    }
+
+    .red{
+        width: 100%;
+        padding: 1rem;
+        background-color: mediumorchid;
+        display: inline-block;
+        font-weight: bold;
+    }
+}
+
+
+.contenedorCitas{
+
+   
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+
+        h2{
+            margin: 0;
+        }
+
+        li{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;            
+            
+           span{
+            font-weight: bold;
+           }
+
+           .total{
+            font-weight: bold;
+
+            font-size: 2.2rem;
+            color: rgb(32, 10, 56);
+            margin-top: 1rem;
+           }
+        }
+
+        .btn_e{
+            background-color: rgb(151, 48, 177);
+        }
+    }
+}
+
+.citas{
+    padding: 0;
+    visibility: visible;
+    opacity: 1;
+}

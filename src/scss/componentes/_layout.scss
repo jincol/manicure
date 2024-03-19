@@ -1,0 +1,479 @@
+@use 'base/variable' as v;
+@use 'base/mixins' as m;
+
+.barra {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 5rem 3rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem auto;
+
+    @include m.tablet {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 0;
+        padding: 3rem 0;
+    }
+
+    .logo {
+        color: v.$text-logo ;
+        font-family: v.$fuente_principal;
+        font-weight: bold;
+        font-size: 3rem;
+        grid-column: 1/2;
+
+    }
+
+    .menu {
+        grid-row: 2/3;
+        font-size: 2.5rem;
+        cursor: pointer;
+
+        @include m.telefono {
+            display: none;
+        }
+    }
+
+    .login {
+        grid-column: 2/3;
+        font-size: 2rem;
+        font-family: v.$fuente_secundaria;
+        color: v.$black;
+        text-align: right;
+        transition: color .2s ease;
+        position: relative;
+
+        &::before {
+            content: " ";
+            width: 1rem;
+            height: 1px;
+            background-color: darkgoldenrod;
+            position: absolute;
+            bottom: 0;
+            transition: width .1s ease;
+
+        }
+
+        &:hover::before {
+            width: 15%;
+        }
+
+        &:hover {
+            color: v.$text-logo;
+        }
+
+
+        @include m.tablet {
+            grid-column: 3/4;
+        }
+
+
+    }
+}
+
+ul {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+
+    @include m.tablet {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.mostrar {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 8rem;
+        left: 0rem;
+        padding: 3rem;
+        background-color: rgb(202, 154, 202);
+
+        li {
+            margin: 2rem 0;
+        }
+
+    }
+
+    @include m.telefono {
+        display: flex;
+        gap: 2.5rem;
+
+        &.mostrar {
+            background: none;
+            position: unset;
+            flex-direction: row;
+
+        }
+    }
+
+    li {
+        list-style: none;
+
+        a {
+            font-size: 2rem;
+            font-family: v.$fuente_secundaria;
+            color: v.$black;
+            transition: color .2s ease;
+
+            &:hover {
+                color: v.$text-logo ;
+            }
+        }
+    }
+}
+
+.bienvenida {
+    width: 100%;
+    height: 50%;
+    background-image: url("/../img/banner_desk.webp");
+    background-color: rgba(243, 84, 243, 0.3);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .titulo {
+        font-size: 9rem;
+        font-family: v.$fuente_principal;
+        text-align: center;
+        font-weight: 400;
+        margin: 0;
+        padding: 5% 0;
+        color: v.$white;
+
+
+        @include m.telefono {
+            font-size: 10rem;
+            padding: 10% 0;
+        }
+
+        @include m.tablet {
+            font-size: 18rem;
+        }
+
+        @include m.desktop {
+            font-size: 23rem;
+        }
+    }
+}
+
+//NOSOTROS
+.nosotros {
+    margin: 3rem auto;
+    text-align: center;
+
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+//SERVICIOS
+
+.servicios {
+    text-align: center;
+
+    .tipos {
+        a {
+            display: block;
+            text-align: center;
+            margin: 1rem 0;
+            border: thin 1px solid;
+            padding: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            &:hover {
+                background-color: #abaef5;
+                color: v.$black;
+            }
+
+            &:nth-child(odd) {
+                background-color: #abaef5;
+
+                &:hover {
+                    background-color: #ffffff;
+                    color: #abaef5;
+
+                }
+            }
+        }
+
+        @include m.tablet {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+
+            a {
+                flex: 1;
+            }
+        }
+    }
+
+}
+
+.galeria {
+
+
+    @include m.telefono {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            transition: transform .2s ease;
+        }
+    }
+
+    @include m.tablet {
+        grid-template-columns: repeat(3, 1fr);
+
+
+    }
+
+    @include m.desktop {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(4, 23rem);
+
+
+        img {
+
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            &:nth-child(1) {
+                grid-column: 1/3;
+            }
+
+            &:nth-child(2) {
+                grid-column: 3/6;
+                grid-row: 1/3;
+            }
+
+            &:nth-child(3) {
+                grid-column: 6/8;
+                object-position: bottom;
+
+            }
+
+            &:nth-child(4) {
+                grid-column: 1/3;
+                grid-row: 2/4;
+            }
+
+            &:nth-child(5) {
+                grid-column: 3/6;
+                grid-row: 3/5;
+            }
+
+            &:nth-child(6) {
+                grid-column: 6/8;
+                grid-row: 2/4;
+            }
+
+            &:nth-child(7) {
+                grid-column: 1/3;
+            }
+
+            &:nth-child(8) {
+                grid-column: 6/8;
+            }
+        }
+    }
+}
+
+//BENEFICIOS
+.beneficios {
+    background-color: v.$text-logo;
+    padding: 4rem;
+    margin: 2rem 0;
+
+    @include m.telefono {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+    }
+
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-around;
+    }
+
+    div {
+        text-align: center;
+
+        @include m.tablet {
+            border-right: thin solid v.$white;
+            padding: 2rem;
+        }
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    i {
+        color: v.$white;
+        font-size: 4rem;
+    }
+}
+
+//TESTIMONIOS
+.testimonios {
+
+    .clientes {
+        display: grid;
+
+        @include m.telefono {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: space-evenly;
+            gap: 2rem;
+        }
+
+        @include m.tablet {
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+    }
+
+
+
+    .cliente {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 2rem;
+        padding: 2rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin: .5rem 0;
+
+        img {
+            width: 8rem;
+            height: 8rem;
+            border: thin solid v.$text-logo;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+
+        }
+
+        .detalle {
+            font-size: 1.2rem;
+            text-align: justify;
+
+            .nombre {
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+
+            }
+
+            .descripcion {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+                line-height: 1;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+//SIDEBAR
+.sidebar {
+    margin: 1.5rem 0;
+    display: grid;
+    background-image: url('/img/banner_desk_contact.webp');
+    padding: 4rem;
+    place-items: center;
+    text-align: center;
+    background-color: rgb(252, 170, 234);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: v.$white;
+}
+
+//FOOTER
+footer {
+    padding: 2rem;
+    font-weight: 300;
+
+    h3 {
+        font-weight: 400;
+    }
+
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr 25rem 1fr;
+        gap: 2rem;
+    }
+
+    .compania,
+    .cuenta,
+    .informacion {
+        border-bottom: thin solid rebeccapurple;
+
+        @include m.tablet {
+            border-bottom: none;
+        }
+    }
+
+    .compania {
+        text-align: justify;
+        font-size: 1.3 rem;
+
+    }
+
+    .cuenta {
+        text-align: center;
+
+
+        a {
+            display: block;
+            margin: 1rem 0;
+        }
+    }
+
+    .informacion {
+        text-align: center;
+
+    }
+
+    ul {
+
+        display: block;
+        padding: 0;
+
+        li {
+            margin: 1rem 0;
+        }
+    }
+
+
+}
+
+.copy {
+    width: 100%;
+    background-color: v.$text-logo;
+    padding: 1rem;
+    text-align: center;
+    font-family: v.$fuente_principal;
+}

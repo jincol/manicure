@@ -1,0 +1,92 @@
+.seccion {
+    padding: 2rem 0;
+    display: none;
+}
+
+
+.mostrar {
+    display: block;
+}
+
+.ocultar {
+    visibility: hidden;
+}
+
+.listado-servicios {
+    padding: 1rem 0;
+    margin: 1rem 0;
+
+    .servicio_div {
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: thin solid blue;
+        padding: 1rem;
+        font-size: 2rem;
+        transition: padding .3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: blueviolet;
+            color: white;
+            font-weight: bold;
+            padding: 1.5rem 0;
+        }
+
+        .nombre-servicio {
+            text-align: left;
+            flex: 1;
+        }
+
+        .precio-servicio {
+            flex: 1;
+            font-weight: bold;
+        }
+    }
+}
+
+.seleccionado {
+    background-color: salmon;
+
+    &:hover {
+        background-color: salmon;
+        color: white;
+        font-weight: bold;
+        padding: 1.5rem 0;
+    }
+}
+
+.contenido-resumen {
+
+    .contenedor-servicio {
+        font-size: 2rem;
+        margin: 1rem 0;
+        border-bottom: thin solid black;
+
+        p {
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .btn_r {
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        text-align: center;
+        transition: background-color .2s ease;
+        
+
+        &:hover {
+            background-color: rgb(31, 30, 30);
+        }
+    }
+}

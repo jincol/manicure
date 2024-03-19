@@ -1,0 +1,21 @@
+{
+    "name": "jin/unias-mvc",
+    "description": "Proyecto de practica MVC - PHP",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Models\\": "./models",
+            "Email\\": "./email"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jin"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

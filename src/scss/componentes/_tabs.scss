@@ -1,0 +1,32 @@
+@use 'base/variable' as v;
+@use 'base/mixins' as m;
+
+
+    .tabs {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        @include m.tablet {
+            flex-direction: row;
+        }
+
+        button {
+            flex: 1;
+            padding: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: background .1s ease;
+            font-weight: bold;
+
+            &:hover {
+                color: v.$white;
+                background-color: #7576a1;
+            }
+
+        &.actual {
+            background-color: v.$text-logo;
+            color: v.$white;
+        }
+        }
+    }

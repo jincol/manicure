@@ -1,0 +1,116 @@
+@use 'base/variable' as v;
+@use 'base/mixins' as m;
+
+
+
+.contenido-login {
+    width: 80%;
+    margin: auto auto;
+
+    h2 {
+        font-size: 3rem;
+        color: v.$black;
+    }
+
+    @include m.tablet {
+        justify-content: center;
+        padding: 2rem;
+
+    }
+
+    .img {
+        display: flex;
+        width: 100%;
+        background-image: url("/../img/banner_desk_contact.webp");
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: auto;
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius: 2rem;
+
+        &.img-crear {
+            background-image: url("/../img/banner_desk.webp");
+            background-position: center;
+
+        }
+
+
+        @include m.tablet {
+            flex-direction: row;
+            background-position: left;
+            background-size: cover;
+        }
+
+        .div {
+            width: 100%;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            height: 40vh;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 0 2rem;
+
+            @include m.telefono {
+                width: 80%;
+                font-size: 1.5rem;
+
+            }
+        }
+    }
+
+}
+
+.formulario {
+    width: 100%;
+    background-color: #9092c7b7;
+    padding: 2rem;
+
+    @include m.tablet {
+        width: 100%;
+    }
+
+    .campo {
+        margin: 2rem auto;
+
+        input {
+            margin: .5rem 0 0 0;
+            width: 100%;
+            border: none;
+            border: thin solid v.$text-logo;
+            padding: 1rem;
+        }
+    }
+
+    .opciones {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3rem;
+    }
+}
+
+
+.titulo {
+    text-align: center;
+}
+
+.mensaje {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: v.$text-logo;
+    border-radius: 3rem;
+    text-align: center;
+
+    .nombre-pagina {
+        font-family: v.$fuente_principal;
+
+    }
+
+    .boton-mensaje {
+        background-color: burlywood;
+    }
+}
