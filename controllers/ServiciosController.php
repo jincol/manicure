@@ -6,7 +6,7 @@ use Models\Servicios;
 use MVC\Router;
 
 class ServiciosController
-{composer
+{
     public static  function index(Router $router)
     {
         isAdmin();
